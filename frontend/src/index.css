@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #0a0a0a;
+  --color-primary-foreground: #f8f9fa;
+  --color-accent: #00d2ff;
+  --color-accent-secondary: #00c9a7;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Global Styles */
+@layer base {
+  body {
+    @apply bg-primary text-primary-foreground font-sans antialiased selection:bg-accent selection:text-primary overflow-x-hidden;
+    background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.015) 0%, transparent 100%);
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface border border-border backdrop-blur-md rounded-xl shadow-lg;
+  }
+}
